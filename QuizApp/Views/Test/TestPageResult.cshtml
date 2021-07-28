@@ -1,0 +1,22 @@
+﻿
+@{
+    ViewBag.Title = "TestPageResult";
+}
+
+
+<h2>Результаты</h2>
+<ul>
+    <li>
+        Вопросов всего: @ViewData["Questions"]
+    </li>
+    <li>
+        Правильных ответов: @ViewData["Answers"]
+    </li>
+    <li>
+        Затраченное время: @ViewData["Spend"]
+    </li>
+    <li>
+        Процент выполнения: @ViewData["Percent"] %
+    </li>
+</ul>
+

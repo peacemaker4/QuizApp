@@ -1,0 +1,27 @@
+﻿@model IEnumerable<QuizApp.Models.Test>
+
+@{
+    ViewBag.Title = "TestPage";
+}
+
+<h2>Тест</h2>
+
+@{
+    var myTest = (List<QuizApp.Models.Test>)ViewData["MyTest"];
+}
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    <ol>
+        @foreach (var c in @myTest)
+        {
+        <li>
+            @Html.Label(c.Question)? (@c.Prompt)
+            @Html.TextBox("question"+c.Id.ToString(), null, new { required = "required" })
+            <hr />
+        </li>
+        }
+    </ol>
+    <button>Сдать</button>
+}

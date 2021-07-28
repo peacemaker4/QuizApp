@@ -1,0 +1,32 @@
+﻿@model IEnumerable<QuizApp.Models.Test>
+
+@{
+    ViewBag.Title = "GetTestResults";
+}
+
+<h2>Результаты по запросу</h2>
+
+@using QuizApp.DB
+@{
+    var db = new Context();
+    var results = (List<QuizApp.Models.UserTest>)ViewData["Results"];
+}
+
+@foreach (var r in @results)
+{
+    
+        var percent= 100 / (Convert.ToDouble(r.Questions) / (r.Answers));
+    
+    <ul>
+        <li>
+            Дата теста: @r.EndTime.Date
+        </li>
+        <li>
+            ФИО: @r.FirstName @r.LastName
+        </li>
+        <li>
+            Результат: @percent %
+        </li>
+    </ul>
+    <hr />
+}

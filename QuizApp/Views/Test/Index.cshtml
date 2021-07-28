@@ -1,0 +1,12 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Добро пожаловать @ViewData["userFirstName"] @ViewData["userLastName"]</h2>
+
+@Html.ActionLink("Пройти тест", "TakeTest", "Test", null, new { @class = "btn btn-primary" })
+@Html.ActionLink("Поиск результатов", "ResultsTimeSelect", "Test", null, new { @class = "btn btn-success" })
+
+
+
